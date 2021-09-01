@@ -1,5 +1,5 @@
-import React from 'react'
 import { AtrticleType } from '../App'
+import "./Article.css"
 
 type PropsType ={
     article : AtrticleType
@@ -7,15 +7,13 @@ type PropsType ={
 
 export const Article = (props: PropsType) => {
     return (
-        <div>
-            <h2>Title</h2>
-            <img src="">Image</img>
-            <div>Description</div>
-            <div>Content</div>
-            <div>Source</div>
-            <div>Author</div>
-            <a href="">Url</a>
-
+        <div className="Article">
+            <h2>{props.article.title}</h2>
+            <img alt="" className="ArticleImg" src={props.article.urlToImage}></img>
+            <p className="Content">{props.article.content}</p>
+            <div>Sourse: {props.article.source.name}</div>
+            <div>Author: {props.article.author}</div>
+            <a href={props.article.url}>Link</a>
         </div>
     )
 }
