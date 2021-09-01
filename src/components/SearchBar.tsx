@@ -1,19 +1,21 @@
-import React from 'react'
-import axios from 'axios'
+import {useState, useEffect} from 'react'
 
 
+type PropsType ={
+    setTerm: (term:string) => void 
+    term: string
+}
 
-export const SearchBar = (props: any) => {
-    const Get = (term:string) =>{
-        axios.get(`https://newsapi.org/v2/everything?q=${term}&apiKey=2bec922d15c94bb3b845024e5e5df4bf`)
-        .then(res => props.setArticles(res.data.articles))
-    }
+export const SearchBar = (props: PropsType) => {
+    const [tempTerm, setTempTerm] = useState<string>('')
 
     return (
         <div>
             <div className="SearchBar">
-                <input placeholder="search"></input>
-                <button onClick={()=>{Get('sex')}}>Search</button>
+                <input placeholder="search" value={tempTerm} onChange={(e)=>{
+                    setTempTerm(e.currentTarget.value)
+                }}></input>
+                <button onClick={()=>{props.setTerm(tempTerm)}}>Search</button>
             </div>
         </div>
     )

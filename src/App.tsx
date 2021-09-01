@@ -1,6 +1,8 @@
 import './App.css';
+import axios from 'axios'
 import { SearchBar } from './components/SearchBar';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import { Article } from './components/Article';
 
 type SourceType={
   id: string
@@ -19,15 +21,20 @@ export type AtrticleType ={
 
 
 const App = () => {
-const [term, setTerm] = useState("")
-const [articles, setArticles] = useState<AtrticleType[] | null>(null)
+const [term, setTerm] = useState<string>("")
+const [articles, setArticles] = useState<AtrticleType[]>()
 
+  useEffect(() => {
+    axios.get(`https://newsapi.org/v2/everything?q=${term}&apiKey=2bec922d15c94bb3b845024e5e5df4bf`)
+        .then(res => setArticles(res.data.articles))
+    
+  },[term])
 
   return (
     <div className="App">
-      <SearchBar setArticles={setArticles}/>
+      <SearchBar setTerm={setTerm} term={term}/>
       {
-        articles?.map((art, index) => <a href={art.url} key={index}>123</a>)
+        articles?.map((art, index) => <Article article={art}/>)
       }
     </div>
   );
