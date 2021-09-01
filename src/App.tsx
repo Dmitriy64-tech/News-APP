@@ -1,4 +1,5 @@
 import './App.css';
+import './components/SearchBar.css'
 import axios from 'axios'
 import { SearchBar } from './components/SearchBar';
 import {useState, useEffect} from 'react'
@@ -32,9 +33,10 @@ const [articles, setArticles] = useState<AtrticleType[]>()
 
   return (
     <div className="App">
-      <SearchBar setTerm={setTerm} term={term}/>
+      <div className="SearchBar"><SearchBar setTerm={setTerm} term={term}/></div>
+      
       {
-        articles?.map((art, index) => <Article article={art}/>)
+        articles?.map((art, index) => <div key={index} className='ArticleWrapper'><Article article={art}/></div>)
       }
     </div>
   );

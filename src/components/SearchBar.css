@@ -1,0 +1,33 @@
+.SearchBar{
+  margin: auto;
+  margin-top: 20px;
+  width: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  background-color: lightpink;
+}
+.Search{
+    width: 85%;
+    height: 25px;
+    border: 2px #f4a460 solid;
+    color: black;
+    font-style: italic;
+    font-size: large;
+}
+.Search:focus{
+    box-shadow: 2px 2px 5px #000;
+}
+.SearchButton{
+    margin-left:20px;
+    width: 10%;
+    height: 2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #f4a460;
+}
+.SearchButton:hover{
+    box-shadow: 2px 2px 5px #000;
+}
+.SearchButton:active{
+    transform: translate(-2px, -2px);
+}

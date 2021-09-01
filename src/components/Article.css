@@ -1,0 +1,14 @@
+.Article{
+    max-width: 1000px;
+    display: grid;
+    justify-self: center; 
+    
+}
+.ArticleImg{
+    width: 800px;
+    height: 600px;
+    justify-content: center;
+}
+.Content{
+    
+}
