@@ -11,11 +11,11 @@ export const SearchBar = (props: PropsType) => {
     const [tempTerm, setTempTerm] = useState<string>('')
 
     return (
-        <div >
+        <>
             <input type='text' className="Search" placeholder="Search" value={tempTerm} onChange={(e) => {
                 setTempTerm(e.currentTarget.value)
             }}></input>
             <button className="SearchButton" onClick={() => { props.setTerm(tempTerm) }}>Search</button>
-        </div>
+        </>
     )
 }

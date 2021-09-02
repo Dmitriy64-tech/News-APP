@@ -13,6 +13,7 @@ export const Article = (props: PropsType) => {
             <p className="Content">     {props.article.content}</p>
             <div className="Source">Sourse: {props.article.source.name}</div>
             <div className="Author">Author: {props.article.author}</div>
+            <div>Published At: {props.article.publishedAt}</div>
             <a className="Link" href={props.article.url}>Link</a>
         </div>
     )

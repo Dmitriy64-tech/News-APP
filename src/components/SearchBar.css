@@ -2,39 +2,48 @@
   margin: auto;
   margin-top: 20px;
   width: 50%;
+  height: 100%;
   border: 3px solid rgba(0, 0, 0, 0.5);
   padding: 10px;
   background-color: blanchedalmond;
   border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1;
 }
 .Search{
-    width: 85%;
-    height: 25px;
+    width: 100%;
+    height: 90%;
     border: 2px #f4a460 solid;
     color: black;
     font-style: italic;
     font-size: large;
+    grid-area: s;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .Search:focus{
     box-shadow: 2px 2px 5px #000;
 }
 .SearchButton{
     margin-left:20px;
-    width: 10%;
-    height: 2rem;
+    width: 80%;
+    height: 100%;
     cursor: pointer;
     border-radius: 4px;
     background-color: #f4a460;
     animation: bounce 1s infinite;
     animation-delay: 2s;
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 .SearchButton:hover{
     box-shadow: 2px 2px 5px #000;
 }
-.SearchButton:active{
-    transform: translate(-2px, -2px);
-}
-
   @keyframes bounce {
     0%   { transform: scale(1,1)    translateY(0); }
     10%  { transform: scale(1.1,.9) translateY(0); }
@@ -42,3 +51,11 @@
     50%  { transform: scale(1,1)    translateY(0); }
     100% { transform: scale(1,1)    translateY(0); }
 }
+
+@media screen and (max-width: 1150px) {
+    .SearchButton{
+        font-size: 0.5rem;
+        width: 70%;
+    }
+  }
+  
