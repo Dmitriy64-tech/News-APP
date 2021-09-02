@@ -15,7 +15,10 @@ export const SearchBar = (props: PropsType) => {
             <input type='text' className="Search" placeholder="Search" value={tempTerm} onChange={(e) => {
                 setTempTerm(e.currentTarget.value)
             }}></input>
-            <button className="SearchButton" onClick={() => { props.setTerm(tempTerm) }}>Search</button>
+            <button className="SearchButton" onClick={() => {
+                props.setTerm(tempTerm)
+                setTempTerm('')
+            }}>Search</button>
         </>
     )
 }
