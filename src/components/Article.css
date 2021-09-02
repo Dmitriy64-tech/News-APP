@@ -1,14 +1,44 @@
 .Article{
     max-width: 1000px;
-    display: grid;
+    display: flex;
     justify-self: center; 
-    
+    border: 2px gray solid;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px gray;
+    padding: 1rem;
+    flex-direction: column;
+    background-color: white;
 }
 .ArticleImg{
     width: 800px;
     height: 600px;
-    justify-content: center;
+    align-self: center;
+    border-radius: 10px;
 }
 .Content{
-    
+    font-size: 1.3rem;
+}
+.Title{
+    font-style: italic;
+    font-size: xx-large;
+    align-self: center;
+}
+.Source{
+    font-weight: bold;
+    align-self: flex-end;
+}
+.Author{
+    font-weight: bold;
+    align-self: flex-end;
+}
+.Link{
+    color: #f4a460;
+    font-size: 1.4rem;
+    align-self: flex-end;
+    text-decoration: none;
+}
+.Link:hover{
+    color: red;
+    transform: translate(-1px, -1px);
 }
