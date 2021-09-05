@@ -4,6 +4,7 @@ import axios from 'axios'
 import { SearchBar } from './components/SearchBar';
 import {useState, useEffect} from 'react'
 import { Article } from './components/Article';
+import { ScrollToTop } from './components/ScrollToTop';
 
 type SourceType={
   id: string
@@ -38,14 +39,17 @@ const [articles, setArticles] = useState<AtrticleType[]>()
     }
     
     
-  },[term])
+  },[term, APIkey])
 
   return (
     <div className="App">
+            <ScrollToTop/>
       <div className="SearchBar"><SearchBar setTerm={setTerm} term={term}/></div>
       {
         articles?.map((art, index) => <div key={index} className='ArticleWrapper'><Article article={art}/></div>)
       }
+
+
     </div>
   );
 }
